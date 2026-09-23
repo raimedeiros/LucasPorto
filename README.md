@@ -38,4 +38,5 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 - **WhatsApp (número e mensagem):** topo do `script.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`). Os `href` no HTML são só fallback caso o JS não carregue.
 - **Preços e planos:** direto no `index.html`, nas seções `#planos-mensais`, `#avulsos` e `#consultoria-online`.
 - **Cores e fontes:** variáveis no início do `style.css` (`:root`).
-- **Logo:** hoje é texto em Oswald. Para usar um arquivo, adicione `assets/logo.svg` e siga o comentário no `index.html` (procure por `LOGO`).
+- **Logo e foto:** `assets/logo.svg` (topo e rodapé) e `assets/lucas.png` (hero). Para trocar, substitua os arquivos mantendo o mesmo nome.
+- **Mensagem do WhatsApp por plano:** cada botão de plano mensal tem um `data-plan` no `index.html`; o texto base fica em `WHATSAPP_PLAN_MESSAGE` no `script.js`.

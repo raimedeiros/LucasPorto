@@ -25,34 +25,32 @@
     <div class="hero__stripes" aria-hidden="true"></div>
 
     <div class="hero__inner container">
-      <!--
-        LOGO — recriada em HTML/CSS com Oswald Medium.
-        Para trocar por um arquivo real, substitua o <span class="logo">…</span> abaixo por:
-          <img class="logo-img" src="assets/logo.svg" alt="Lucas Porto" width="220" height="48">
-        (e ajuste o tamanho em .logo-img no style.css)
-      -->
-      <span class="logo" role="img" aria-label="Lucas Porto">
-        <span class="logo__first">LUCAS</span><span class="logo__last">PORTO</span>
-      </span>
+      <img class="logo-img" src="assets/logo.svg" alt="Lucas Porto · Personal Trainer" width="1815" height="724">
 
-      <p class="hero__eyebrow"><span class="dot" aria-hidden="true"></span> Personal Trainer</p>
+      <div class="hero__body">
+        <figure class="hero__photo">
+          <img src="assets/lucas.png" alt="Lucas Porto, personal trainer" width="482" height="481" fetchpriority="high">
+        </figure>
 
-      <h1 class="hero__title">
-        <span class="line"><span>Treino que</span></span>
-        <span class="line"><span>te leva</span></span>
-        <span class="line"><span class="accent">a sério.</span></span>
-      </h1>
+        <div class="hero__text">
+          <h1 class="hero__title">
+            <span class="line"><span>Treino que</span></span>
+            <span class="line"><span>te leva</span></span>
+            <span class="line"><span class="accent">a sério.</span></span>
+          </h1>
 
-      <p class="hero__lead">
-        Energia de verdade, método e acompanhamento de perto — do primeiro treino até o resultado que você veio buscar.
-      </p>
+          <p class="hero__lead">
+            Energia de verdade, método e acompanhamento de perto — do primeiro treino até o resultado que você veio buscar.
+          </p>
 
-      <div class="hero__actions">
-        <a class="btn btn--primary btn--lg js-wa" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
-          <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
-          Chamar no WhatsApp
-        </a>
-        <a class="btn btn--ghost" href="#planos-mensais">Ver planos</a>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg js-wa" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+              Chamar no WhatsApp
+            </a>
+            <a class="btn btn--ghost" href="#planos-mensais">Ver planos</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -85,12 +83,17 @@
           <p class="section__lead">Constância é o que gera resultado. Nos planos mensais você treina mais, evolui mais rápido e paga menos por aula.</p>
         </div>
 
+        <!-- data-plan: nome do plano que vai na mensagem do WhatsApp -->
         <ul class="plans" role="list">
           <li class="plan reveal">
             <p class="plan__type">Plano</p>
             <h3 class="plan__name">1 aula<small>/mês</small></h3>
             <p class="plan__price"><span class="cur">R$</span>150</p>
             <p class="plan__save">Economiza R$ 20 <span>vs. R$ 170 avulsa</span></p>
+            <a class="btn btn--outline plan__cta js-wa" data-plan="1 aula/mês (R$ 150)" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+              Quero esse plano<span class="sr-only">: 1 aula/mês (R$ 150)</span>
+            </a>
           </li>
 
           <li class="plan reveal">
@@ -98,6 +101,10 @@
             <h3 class="plan__name">8 aulas<small>/mês</small></h3>
             <p class="plan__price"><span class="cur">R$</span>970</p>
             <p class="plan__save">Economiza R$ 390</p>
+            <a class="btn btn--outline plan__cta js-wa" data-plan="Sessão Individual – 8 aulas/mês (R$ 970)" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+              Quero esse plano<span class="sr-only">: Sessão Individual – 8 aulas/mês (R$ 970)</span>
+            </a>
           </li>
 
           <li class="plan plan--featured reveal">
@@ -106,7 +113,10 @@
             <h3 class="plan__name">12 aulas<small>/mês</small></h3>
             <p class="plan__price"><span class="cur">R$</span>1.340</p>
             <p class="plan__save">Economiza R$ 700</p>
-            <a class="btn btn--light plan__cta js-wa" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">Quero esse plano</a>
+            <a class="btn btn--light plan__cta js-wa" data-plan="Sessão Individual – 12 aulas/mês (R$ 1.340)" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+              Quero esse plano<span class="sr-only">: Sessão Individual – 12 aulas/mês (R$ 1.340)</span>
+            </a>
           </li>
 
           <li class="plan reveal">
@@ -114,6 +124,10 @@
             <h3 class="plan__name">8 aulas<small>/mês</small></h3>
             <p class="plan__price"><span class="cur">R$</span>1.450</p>
             <p class="plan__save">Economiza R$ 710</p>
+            <a class="btn btn--outline plan__cta js-wa" data-plan="Sessão Compartilhada – 8 aulas/mês (R$ 1.450)" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+              Quero esse plano<span class="sr-only">: Sessão Compartilhada – 8 aulas/mês (R$ 1.450)</span>
+            </a>
           </li>
 
           <li class="plan reveal">
@@ -121,7 +135,12 @@
             <h3 class="plan__name">12 aulas<small>/mês</small></h3>
             <p class="plan__price"><span class="cur">R$</span>2.000</p>
             <p class="plan__save">Economiza R$ 1.240</p>
+            <a class="btn btn--outline plan__cta js-wa" data-plan="Sessão Compartilhada – 12 aulas/mês (R$ 2.000)" href="https://wa.me/5561983435171?text=Li%20sobre%20seu%20trabalho%20no%20instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener">
+              <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+              Quero esse plano<span class="sr-only">: Sessão Compartilhada – 12 aulas/mês (R$ 2.000)</span>
+            </a>
           </li>
+
         </ul>
 
         <div class="section__cta reveal">
@@ -204,7 +223,7 @@
     </div>
     <div class="final__bottom">
       <div class="container">
-        <span class="logo logo--sm" role="img" aria-label="Lucas Porto"><span class="logo__first">LUCAS</span><span class="logo__last">PORTO</span></span>
+        <img class="logo-img logo-img--sm" src="assets/logo.svg" alt="Lucas Porto · Personal Trainer" width="1815" height="724" loading="lazy">
         <p>© <span id="year">2026</span> Lucas Porto · Personal Trainer</p>
       </div>
     </div>
