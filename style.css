@@ -201,7 +201,7 @@ section[tabindex="-1"]:focus { outline: none; }
   padding-bottom: 48px;
 }
 
-.hero .logo-img { align-self: flex-start; margin-bottom: 32px; }
+.hero .logo-img { align-self: center; height: 128px; margin-bottom: 32px; }
 
 .hero__body {
   flex: 1;
@@ -210,11 +210,18 @@ section[tabindex="-1"]:focus { outline: none; }
   justify-content: center;
 }
 
+.hero__row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 4vw, 48px);
+  margin-bottom: 24px;
+}
+
 .hero__photo {
   position: relative;
   flex: none; /* Safari: sem isso o flex encolhe a altura e a foto vira oval */
-  width: 148px;
-  margin: 0 0 28px;
+  width: clamp(100px, 32vw, 300px);
+  margin: 0;
   opacity: 0;
   animation: pop .9s .1s var(--ease) forwards;
 }
@@ -242,10 +249,10 @@ section[tabindex="-1"]:focus { outline: none; }
 }
 
 .hero__title {
-  font-size: clamp(3.25rem, 16vw, 8.5rem);
+  min-width: 0;
+  font-size: clamp(2rem, 10.5vw, 7.5rem);
   line-height: .92;
   letter-spacing: -.005em;
-  margin-bottom: 24px;
 }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: .04em; }
 .hero__title .line > span {
@@ -662,16 +669,9 @@ section[tabindex="-1"]:focus { outline: none; }
 @media (min-width: 960px) {
   :root { --tabs-h: 72px; }
 
-  .logo-img { height: 80px; }
+  .hero .logo-img { height: 160px; }
   .logo-img--sm { height: 44px; }
   .hero__inner { padding-top: 40px; }
-  .hero__body {
-    display: grid;
-    grid-template-columns: 1fr minmax(300px, 420px);
-    align-items: center;
-    gap: 56px;
-  }
-  .hero__photo { order: 2; width: 100%; margin: 0; }
   .hero__photo img { border-width: 6px; }
   .hero__photo::after { inset: -18px; }
   .hero__lead { font-size: 1.2rem; }
