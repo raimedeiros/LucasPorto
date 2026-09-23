@@ -411,11 +411,19 @@ section[tabindex="-1"]:focus { outline: none; }
 /* ---------- Planos mensais (cards) ---------- */
 .plans {
   display: grid;
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.plans__subtitle {
+  font-size: clamp(1.5rem, 6.5vw, 2.25rem);
+  line-height: 1.1;
+  margin: 44px 0 18px;
 }
 .plan {
   position: relative;
-  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 14px 14px;
   border-radius: var(--radius);
   background: var(--gray-800);
   border: 1px solid var(--gray-700);
@@ -427,38 +435,44 @@ section[tabindex="-1"]:focus { outline: none; }
   box-shadow: 0 20px 40px -24px rgba(192, 57, 43, .7);
 }
 .plan__type {
-  font-size: .78rem;
+  font-size: .68rem;
   font-weight: 600;
-  letter-spacing: .14em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--gray-400);
   margin-bottom: 6px;
 }
 .plan__name {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   line-height: 1.1;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .plan__name small { font-size: .6em; color: var(--gray-400); margin-left: 2px; }
+.plan__row { /* cards menores: economia abaixo do preço; destaque: lado a lado */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+}
 .plan__price {
-  font-size: 3.25rem;
+  flex: none;
+  font-size: 2.3rem;
   line-height: 1;
-  margin-bottom: 14px;
 }
 .plan__save {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2px 8px;
-  font-size: .9rem;
+  display: flex;
+  flex-direction: column;
+  font-size: .78rem;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--white);
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 8px;
   background: rgba(192, 57, 43, .22);
   border-left: 3px solid var(--red);
 }
-.plan__save span { font-weight: 400; color: #d4d4d4; font-size: .82rem; }
+.plan__save span { font-weight: 400; color: #d4d4d4; font-size: .7rem; }
 
 .plan__badge {
   position: absolute;
@@ -477,27 +491,44 @@ section[tabindex="-1"]:focus { outline: none; }
 }
 
 .plan--featured {
+  grid-column: 1 / -1;
   background: linear-gradient(155deg, var(--red) 0%, var(--red-dark) 100%);
   border-color: var(--red);
-  padding-block: 34px 28px;
+  padding: 26px 20px 20px;
   box-shadow: 0 24px 60px -24px rgba(192, 57, 43, .9);
 }
 .plan--featured:hover { border-color: var(--white); }
 .plan--featured .plan__type,
 .plan--featured .plan__name small { color: rgba(255,255,255,.85); }
-.plan--featured .plan__price { font-size: 3.75rem; }
+.plan--featured .plan__name { font-size: 1.6rem; }
+.plan--featured .plan__row { flex-direction: row; align-items: center; gap: 14px; }
+.plan--featured .plan__price { font-size: 3.25rem; }
 .plan--featured .plan__save {
   background: rgba(0, 0, 0, .28);
   border-left-color: var(--white);
 }
-.plan__cta { width: 100%; margin-top: 22px; }
+.plan__cta {
+  width: 100%;
+  margin-top: auto;
+  min-height: 42px;
+  padding: .6em .8em;
+  font-size: .8rem;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.plan:not(.plan--featured) .plan__cta .btn__icon { display: none; } /* não cabe no card estreito */
+.plan--featured .plan__cta { font-size: .95rem; min-height: 46px; }
 .is-clickable { cursor: pointer; }
 
-/* botão de WhatsApp nos cards de avulsos e consultoria online */
-.list__item,
-.period { flex-wrap: wrap; }
-.list__item .plan__cta,
-.period .plan__cta { flex-basis: 100%; margin-top: 0; }
+/* avulsos e consultoria online: o card inteiro é o link (sem botão visível) */
+.list__item { position: relative; }
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+.card-link:focus-visible { outline-offset: 2px; border-radius: var(--radius); }
 
 .section__cta {
   margin-top: 44px;
@@ -657,12 +688,19 @@ section[tabindex="-1"]:focus { outline: none; }
   .tabs__inner { justify-content: center; }
   .tab { padding: 0 22px; }
 
-  .plans { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .plan--featured { grid-column: 1 / -1; }
+  .plans { gap: 20px; }
+  .plan { padding: 24px 22px 20px; }
+  .plan__type { font-size: .75rem; letter-spacing: .14em; }
+  .plan__name { font-size: 1.6rem; }
+  .plan__row { flex-direction: row; align-items: center; gap: 14px; }
+  .plan__price { font-size: 2.75rem; }
+  .plan__cta { font-size: .95rem; min-height: 46px; }
+  .plan:not(.plan--featured) .plan__cta .btn__icon { display: block; }
+  .plan--featured { padding: 30px 26px 24px; }
+  .plan--featured .plan__price { font-size: 3.5rem; }
 
   .periods { grid-template-columns: repeat(3, 1fr); }
   .period { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
-  .period .plan__cta { flex-basis: auto; margin-top: auto; }
   .period__price { font-size: 2.75rem; }
 
   .section__cta { flex-direction: row; align-items: center; justify-content: space-between; }
@@ -689,28 +727,31 @@ section[tabindex="-1"]:focus { outline: none; }
   .section { padding-block: 96px; }
   .section--main { padding-block: 120px; }
 
-  .plans {
-    grid-template-columns: repeat(6, 1fr);
-    align-items: stretch;
-  }
-  /* linha 1: 1 aula · 8 ind · 12 ind (destaque) — linha 2: compartilhadas */
-  .plan { grid-column: span 2; display: flex; flex-direction: column; }
+  .plans,
+  .plans__subtitle { max-width: 920px; }
+  .plans__subtitle { margin-top: 56px; }
+  /* destaque na horizontal: infos à esquerda, botão à direita */
   .plan--featured {
-    grid-column: span 2;
-    transform: scale(1.04);
-    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 40px;
+    align-items: center;
+    padding: 34px 36px;
   }
-  .plan--featured:hover { transform: scale(1.04) translateY(-4px); }
-  .plan:nth-child(4) { grid-column: 2 / span 2; }
-  .plan:nth-child(5) { grid-column: 4 / span 2; }
-  .plan__save { align-self: flex-start; }
-  .plan__save { margin-bottom: 22px; }
-  .plan__cta { margin-top: auto; }
+  .plan--featured .plan__row { margin-bottom: 0; }
+  .plan--featured .plan__cta {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: auto;
+    margin: 0;
+    padding-inline: 2.2em;
+    font-size: 1.1rem;
+    min-height: 56px;
+  }
 
   .list { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .list__item { flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 28px 24px; min-height: 180px; }
   .list__item:hover { transform: translateY(-3px); }
-  .list__item .plan__cta { flex-basis: auto; margin-top: auto; }
   .list__price { font-size: 2.5rem; }
 
   .fab { right: 28px; bottom: 28px; width: 62px; height: 62px; }
