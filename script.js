@@ -20,8 +20,8 @@
     a.href = waUrl(plan ? WHATSAPP_PLAN_MESSAGE.replace('{plano}', plan) : WHATSAPP_MESSAGE);
   });
 
-  // Clicar em qualquer parte do card do plano abre o WhatsApp daquele plano
-  document.querySelectorAll('.plan').forEach(function (card) {
+  // Clicar em qualquer parte do card abre o WhatsApp daquele plano
+  document.querySelectorAll('.plan, .list__item, .period').forEach(function (card) {
     var link = card.querySelector('.plan__cta');
     if (!link) return;
     card.classList.add('is-clickable');

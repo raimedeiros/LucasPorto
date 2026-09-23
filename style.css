@@ -491,7 +491,13 @@ section[tabindex="-1"]:focus { outline: none; }
   border-left-color: var(--white);
 }
 .plan__cta { width: 100%; margin-top: 22px; }
-.plan.is-clickable { cursor: pointer; }
+.is-clickable { cursor: pointer; }
+
+/* botão de WhatsApp nos cards de avulsos e consultoria online */
+.list__item,
+.period { flex-wrap: wrap; }
+.list__item .plan__cta,
+.period .plan__cta { flex-basis: 100%; margin-top: 0; }
 
 .section__cta {
   margin-top: 44px;
@@ -656,6 +662,7 @@ section[tabindex="-1"]:focus { outline: none; }
 
   .periods { grid-template-columns: repeat(3, 1fr); }
   .period { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
+  .period .plan__cta { flex-basis: auto; margin-top: auto; }
   .period__price { font-size: 2.75rem; }
 
   .section__cta { flex-direction: row; align-items: center; justify-content: space-between; }
@@ -703,6 +710,7 @@ section[tabindex="-1"]:focus { outline: none; }
   .list { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .list__item { flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 28px 24px; min-height: 180px; }
   .list__item:hover { transform: translateY(-3px); }
+  .list__item .plan__cta { flex-basis: auto; margin-top: auto; }
   .list__price { font-size: 2.5rem; }
 
   .fab { right: 28px; bottom: 28px; width: 62px; height: 62px; }
