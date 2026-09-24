@@ -21,7 +21,7 @@
   });
 
   // Clicar em qualquer parte do card abre o WhatsApp daquele plano
-  document.querySelectorAll('.plan, .list__item, .period').forEach(function (card) {
+  document.querySelectorAll('.plan, .list__item').forEach(function (card) {
     var link = card.querySelector('.plan__cta');
     if (!link) return;
     card.classList.add('is-clickable');
@@ -38,7 +38,7 @@
   var reveals = document.querySelectorAll('.reveal');
 
   // pequeno escalonamento entre itens irmãos (cards de uma mesma grid)
-  document.querySelectorAll('.plans, .list, .periods').forEach(function (group) {
+  document.querySelectorAll('.plans, .list').forEach(function (group) {
     Array.prototype.forEach.call(group.children, function (el, i) {
       el.style.setProperty('--d', (i * 0.08) + 's');
     });
