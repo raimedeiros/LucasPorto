@@ -799,10 +799,9 @@ section[tabindex="-1"]:focus { outline: none; }
     min-height: 56px;
   }
 
-  .list { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .list__item { flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 28px 24px; min-height: 180px; }
-  .list__item:hover { transform: translateY(-3px); }
-  .list__price { font-size: 2.5rem; }
+  .list { max-width: 920px; }
+  .list__item { padding: 26px 32px; }
+  .list__price { font-size: 2.25rem; }
 
   .fab { right: 28px; bottom: 28px; width: 62px; height: 62px; }
 }
