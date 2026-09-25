@@ -36,8 +36,8 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 ## Outras páginas
 
 - **`bio/`** → link da bio do Instagram (`lucasporto.fit/bio/`): foto, logo e links para Velocity, Personal Trainer e Playlist (em breve).
-- **`velocity/`** → página da Velocity (provisória, "Em breve").
-- As duas usam `assets/links.css`, com as mesmas cores e fontes do site.
+- **`velocity/`** → página da Velocity (bike indoor), com cores próprias em `assets/velocity.css`. A galeria de fotos está escondida (`hidden`) até as fotos das aulas chegarem.
+- A bio usa `assets/links.css`, com as mesmas cores e fontes do site.
 
 ## Onde editar
 
