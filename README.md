@@ -33,6 +33,12 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 
 > Domínio próprio: em **Settings → Pages → Custom domain**, informe o domínio e configure o DNS conforme a documentação do GitHub.
 
+## Outras páginas
+
+- **`bio/`** → link da bio do Instagram (`lucasporto.fit/bio/`): foto, logo e links para Velocity, Personal Trainer e Playlist (em breve).
+- **`velocity/`** → página da Velocity (provisória, "Em breve").
+- As duas usam `assets/links.css`, com as mesmas cores e fontes do site.
+
 ## Onde editar
 
 - **WhatsApp (número e mensagem):** topo do `script.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`). Os `href` no HTML são só fallback caso o JS não carregue.
