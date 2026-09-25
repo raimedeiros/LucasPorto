@@ -51,7 +51,7 @@ a { color: inherit; }
 img, svg { display: block; }
 
 h1, h2, h3,
-.btn, .tab, .kicker, .plan__price, .list__price, .ticker {
+.btn, .tab, .kicker, .plan__price, .ticker {
   font-family: var(--font-head);
   font-weight: 500;
   text-transform: uppercase;
@@ -554,15 +554,6 @@ section[tabindex="-1"]:focus { outline: none; }
 }
 .is-clickable { cursor: pointer; }
 
-/* avulsos e consultoria online: o card inteiro é o link (sem botão visível) */
-.list__item { position: relative; }
-.card-link {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: inherit;
-}
-.card-link:focus-visible { outline-offset: 2px; border-radius: var(--radius); }
 
 .section__cta {
   margin-top: 44px;
@@ -575,30 +566,6 @@ section[tabindex="-1"]:focus { outline: none; }
   border: 1px dashed rgba(192, 57, 43, .6);
 }
 .section__cta p { font-size: 1.1rem; }
-
-/* ---------- Avulsos (lista) ---------- */
-.list { display: grid; gap: 12px; }
-.list__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 22px;
-  border-radius: var(--radius);
-  background: var(--gray-900);
-  border: 1px solid var(--gray-700);
-  transition: border-color .3s, transform .3s var(--ease);
-}
-.list__item:hover { border-color: #444; transform: translateX(4px); }
-.list__name { font-weight: 600; line-height: 1.35; }
-.list__name small {
-  display: block;
-  font-weight: 400;
-  font-size: .85rem;
-  color: var(--gray-400);
-  margin-top: 2px;
-}
-.list__price { font-size: 1.6rem; white-space: nowrap; }
 
 /* ---------- Consultoria online: o que inclui ---------- */
 .features {
@@ -721,8 +688,7 @@ section[tabindex="-1"]:focus { outline: none; }
 }
 .js .reveal.is-in { opacity: 1; transform: none; }
 /* mantém o hover funcionando depois do reveal */
-.js .plan.reveal.is-in,
-.js .list__item.reveal.is-in { transition: opacity .7s var(--ease), transform .35s var(--ease), border-color .35s, box-shadow .35s; }
+.js .plan.reveal.is-in { transition: opacity .7s var(--ease), transform .35s var(--ease), border-color .35s, box-shadow .35s; }
 
 /* ==========================================================
    Tablet
@@ -799,9 +765,6 @@ section[tabindex="-1"]:focus { outline: none; }
     min-height: 56px;
   }
 
-  .list { max-width: 920px; }
-  .list__item { padding: 26px 32px; }
-  .list__price { font-size: 2.25rem; }
 
   .fab { right: 28px; bottom: 28px; width: 62px; height: 62px; }
 }

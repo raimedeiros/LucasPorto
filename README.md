@@ -36,7 +36,7 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 ## Onde editar
 
 - **WhatsApp (número e mensagem):** topo do `script.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`). Os `href` no HTML são só fallback caso o JS não carregue.
-- **Preços e planos:** direto no `index.html`, nas seções `#consultoria-online`, `#planos-mensais` (acompanhamento mensal) e `#avulsos`.
+- **Preços e planos:** direto no `index.html`, nas seções `#consultoria-online` e `#planos-mensais` (acompanhamento mensal).
 - **Cores e fontes:** variáveis no início do `style.css` (`:root`).
 - **Cache:** ao alterar `style.css`, `script.js` ou as imagens em `assets/`, aumente o número em `?v=` nos links do `index.html` (ex.: `style.css?v=3`). Sem isso, navegadores podem continuar usando o arquivo antigo e a página aparece com estilos quebrados.
 - **Logo e foto:** `assets/logo.svg` (topo e rodapé) e `assets/lucas.png` (hero). Para trocar, substitua os arquivos mantendo o mesmo nome.
