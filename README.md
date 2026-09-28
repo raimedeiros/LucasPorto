@@ -35,8 +35,8 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 
 ## Outras páginas
 
-- **`bio/`** → link da bio do Instagram (`lucasporto.fit/bio/`): foto, logo e links para Velocity, Personal Trainer e Playlist (em breve).
-- **`velocity/`** → página da Velocity (bike indoor), com cores próprias em `assets/velocity.css`. A galeria de fotos está escondida (`hidden`) até as fotos das aulas chegarem.
+- **`bio/`** → link da bio do Instagram (`lucasporto.fit/bio/`): foto, logo e links para Personal Trainer, Velocity, grupo do Time do Porto e playlist no Spotify.
+- **`velocity/`** → página da Velocity (bike indoor), com cores próprias em `assets/velocity.css`. Os botões do Time do Porto levam ao grupo do WhatsApp. Na galeria só a primeira foto está visível; as demais estão ocultas (`hidden`) até chegarem novas fotos.
 - A bio usa `assets/links.css`, com as mesmas cores e fontes do site.
 
 ## Onde editar
