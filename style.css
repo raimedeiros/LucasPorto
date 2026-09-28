@@ -201,6 +201,25 @@ section[tabindex="-1"]:focus { outline: none; }
   padding-bottom: 48px;
 }
 
+/* link "Voltar" para a bio, no canto do topo (não desloca o logo centralizado) */
+.back {
+  position: absolute;
+  top: 24px;
+  right: var(--gutter);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 2px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-decoration: none;
+  transition: color .25s;
+}
+.back:hover { color: var(--white); }
+.back svg { width: 16px; height: 16px; }
+
 .hero .logo-img { align-self: center; height: 128px; margin-bottom: 32px; }
 
 .hero__body {
@@ -628,19 +647,15 @@ section[tabindex="-1"]:focus { outline: none; }
   margin-bottom: 16px;
 }
 .final__lead { max-width: 40ch; font-size: 1.1rem; margin-bottom: 32px; }
-.insta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 28px;
-  padding: 8px 4px;
+.footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+.footer__links a {
   font-weight: 600;
+  color: var(--white);
   text-decoration: none;
-  border-bottom: 2px solid rgba(255,255,255,.4);
+  border-bottom: 2px solid var(--red);
   transition: border-color .25s;
 }
-.insta:hover { border-color: var(--white); }
-.insta__icon { width: 22px; height: 22px; }
+.footer__links a:hover { border-color: var(--white); }
 
 .final__bottom {
   position: relative;

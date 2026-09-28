@@ -45,5 +45,5 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 - **Preços e planos:** direto no `index.html`, nas seções `#consultoria-online` e `#planos-mensais` (acompanhamento mensal).
 - **Cores e fontes:** variáveis no início do `style.css` (`:root`).
 - **Cache:** ao alterar `style.css`, `script.js` ou as imagens em `assets/`, aumente o número em `?v=` nos links do `index.html` (ex.: `style.css?v=3`). Sem isso, navegadores podem continuar usando o arquivo antigo e a página aparece com estilos quebrados.
-- **Logo e foto:** `assets/logo.svg` (topo e rodapé) e `assets/lucas.png` (hero). Para trocar, substitua os arquivos mantendo o mesmo nome.
+- **Logo e fotos:** `assets/logo.svg` (topo e rodapé). Fotos do Lucas: originais em `assets/lucas_personal.JPG` e `assets/lucas_velocity.JPG` (2000×3000); o site usa recortes quadrados de 800px (`lucas_personal_avatar.jpg` no site e na bio, `lucas_velocity_avatar.jpg` na Velocity). Ao trocar uma foto, gere o recorte de novo e aumente o `?v=`.
 - **Mensagem do WhatsApp por plano:** cada botão de plano tem um `data-plan` no `index.html`; o texto base fica em `WHATSAPP_PLAN_MESSAGE` no `script.js`.

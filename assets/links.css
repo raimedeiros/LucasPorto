@@ -172,23 +172,15 @@ a.link:hover .link__arrow { transform: translateX(3px); color: var(--white); }
 }
 
 /* ---------- Rodapé ---------- */
-.social {
-  display: flex;
-  gap: 12px;
-  margin-top: 36px;
-}
-.social a {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid var(--gray-700);
+.footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 36px; font-size: .9rem; }
+.footer__links a {
+  font-weight: 600;
   color: var(--white);
-  transition: border-color .25s, background-color .25s;
+  text-decoration: none;
+  border-bottom: 2px solid var(--red);
+  transition: border-color .25s;
 }
-.social a:hover { border-color: var(--red); background: var(--red); }
-.social svg { width: 22px; height: 22px; }
+.footer__links a:hover { border-color: var(--white); }
 
 .copy {
   margin-top: 20px;
