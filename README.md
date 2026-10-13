@@ -37,7 +37,8 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 
 - **`bio/`** → link da bio do Instagram (`lucasporto.fit/bio/`): foto, logo e links para Personal Trainer, Velocity, grupo do Time do Porto e playlist no Spotify.
 - **`velocity/`** → página da Velocity (bike indoor), com cores próprias em `assets/velocity.css`. Os botões do Time do Porto levam ao grupo do WhatsApp. Na galeria só a primeira foto está visível; as demais estão ocultas (`hidden`) até chegarem novas fotos.
-- A bio usa `assets/links.css`, com as mesmas cores e fontes do site.
+- **`qr/`** → página com foto, logo e QR Code do grupo do Time do Porto (`assets/qr_time_do_porto.svg`). Se o link do grupo mudar, é preciso gerar um novo QR Code.
+- A bio e a página QR usam `assets/links.css`, com as mesmas cores e fontes do site.
 
 ## Onde editar
 
