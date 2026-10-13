@@ -664,6 +664,7 @@ section[tabindex="-1"]:focus { outline: none; }
   color: var(--gray-400);
   font-size: .85rem;
 }
+.final__bottom a { color: inherit; }
 .final__bottom .container {
   display: flex;
   flex-direction: column;

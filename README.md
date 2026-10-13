@@ -38,7 +38,12 @@ A cada novo `push` na `main`, o site é atualizado automaticamente.
 - **`bio/`** → link da bio do Instagram (`lucasporto.fit/bio/`): foto, logo e links para Personal Trainer, Velocity, grupo do Time do Porto e playlist no Spotify.
 - **`velocity/`** → página da Velocity (bike indoor), com cores próprias em `assets/velocity.css`. Os botões do Time do Porto levam ao grupo do WhatsApp. Na galeria só a primeira foto está visível; as demais estão ocultas (`hidden`) até chegarem novas fotos.
 - **`qr/`** → página com foto, logo e QR Code do grupo do Time do Porto (`assets/qr_time_do_porto.svg`). Se o link do grupo mudar, é preciso gerar um novo QR Code.
-- A bio e a página QR usam `assets/links.css`, com as mesmas cores e fontes do site.
+- **`privacidade/`** → política de privacidade e cookies, com botão para mudar a escolha.
+- A bio, a página QR e a de privacidade usam `assets/links.css`, com as mesmas cores e fontes do site.
+
+## Google Analytics e aviso de cookies
+
+Todas as páginas carregam `assets/consent.js`, que mostra um aviso discreto de cookies. O Google Analytics (`G-3M9JLKCE6S`) só é carregado depois que a pessoa clica em **Aceitar**; em **Recusar**, nada é carregado. A escolha fica salva no navegador. Cliques em links de WhatsApp são registrados como evento `whatsapp_click` (com o plano, quando houver). Para trocar o ID, edite `GA_ID` no topo do arquivo.
 
 ## Onde editar
 
