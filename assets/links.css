@@ -155,6 +155,12 @@ a.link:active { transform: scale(.98); }
 }
 a.link:hover .link__arrow { transform: translateX(3px); color: var(--white); }
 
+/* destaques: Velocity (amarelo) e Personal (vermelho) */
+.link--velocity { border: 2px solid #FFE537; }
+a.link--velocity:hover { border-color: #FFE537; box-shadow: 0 16px 36px -20px rgba(255, 229, 55, .8); }
+.link--velocity .link__icon { background: #FFE537; color: #3A3A3A; }
+.link--personal { border: 2px solid var(--red); }
+
 /* em breve */
 .link--soon { opacity: .5; }
 
