@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500&display=swap" rel="stylesheet">
 
   <!-- ?v=: aumente a cada alteração no CSS/imagens para o navegador não usar a versão em cache -->
-  <link rel="stylesheet" href="../assets/velocity.css?v=7">
+  <link rel="stylesheet" href="../assets/velocity.css?v=10">
 </head>
 <body>
   <!-- ============ HERO ============ -->
@@ -96,8 +96,49 @@
       </div>
     </section>
 
+    <!-- ============ HORÁRIOS ============ -->
+    <section class="section schedule" id="horarios" aria-labelledby="t-horarios">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="t-horarios">Horários das <span class="mark">aulas</span></h2>
+          <p class="section__lead">Escolha a unidade e o horário que encaixam na sua rotina.</p>
+        </div>
+
+        <div class="units">
+          <article class="unit reveal">
+            <h3 class="unit__name">Unidade <span class="mark">Sudoeste</span></h3>
+            <ul class="unit__rows" role="list">
+              <li><span class="unit__day">Terça e quinta</span><span class="unit__times"><span class="time">18h30</span><span class="time">19h30</span></span></li>
+              <li><span class="unit__day">Sexta</span><span class="unit__times"><span class="time">12h</span></span></li>
+            </ul>
+            <a class="unit__addr" href="https://www.google.com/maps/search/?api=1&query=Sudoeste%20Platinum%20Mall%20CLSW%20105%20Bloco%20B%20Loja%2029%20Bras%C3%ADlia" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span>CLSW 105, Bloco B, Loja 29 · Sudoeste Platinum Mall</span>
+            </a>
+          </article>
+
+          <article class="unit reveal">
+            <h3 class="unit__name">Unidade <span class="mark">Noroeste</span></h3>
+            <ul class="unit__rows" role="list">
+              <li><span class="unit__day">Terça e quinta</span><span class="unit__times"><span class="time">12h15</span></span></li>
+            </ul>
+            <a class="unit__addr" href="https://www.google.com/maps/search/?api=1&query=SHCNW%20SQNW%20Bloco%20A%20Lote%201%20Noroeste%20Bras%C3%ADlia" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span>SHCNW SQNW, Bloco A, Lote 1 · Noroeste</span>
+            </a>
+          </article>
+        </div>
+
+        <div class="schedule__notes reveal">
+          <p><strong>Fins de semana:</strong> consulte os horários, eles variam conforme a escala.</p>
+          <p><strong>Reserva:</strong> garanta sua bike com créditos pelo app da Velocity.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ GALERIA ============ -->
-    <section class="section" aria-labelledby="t-fotos">
+    <!-- Galeria oculta por enquanto: a foto foi para a seção do Time do Porto. Ao chegarem fotos das aulas, remova o hidden. -->
+    <section class="section" aria-labelledby="t-fotos" hidden>
       <div class="container">
         <div class="section__head reveal">
           <h2 class="section__title" id="t-fotos">Por dentro da <span class="mark">sala</span></h2>
@@ -125,22 +166,28 @@
 
     <!-- ============ TIME DO PORTO ============ -->
     <section class="section team" id="time" aria-labelledby="t-time">
-      <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title" id="t-time">Entre para o Time do Porto</h2>
-          <p class="section__lead">Aula especial lota rápido. Quem é do time fica sabendo antes de todo mundo e se planeja para conseguir sua bike sem correria.</p>
+      <div class="container team__grid">
+        <figure class="team__photo reveal">
+          <img src="../assets/velocity_1_web.jpg?v=1" alt="Lucas Porto com a regata amarela da Velocity, sorrindo, mostrando o bíceps e fazendo sinal de paz" width="1600" height="1000" loading="lazy">
+        </figure>
+
+        <div class="team__content">
+          <div class="section__head reveal">
+            <h2 class="section__title" id="t-time">Entre para o Time do Porto</h2>
+            <p class="section__lead">Aula especial lota rápido. Quem é do time fica sabendo antes de todo mundo e se planeja para conseguir sua bike sem correria.</p>
+          </div>
+
+          <ul class="perks reveal" role="list">
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg>Aviso antecipado das aulas especiais</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg>Novidades e temas do mês em primeira mão</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg>Acesso aos desafios do time</li>
+          </ul>
+
+          <a class="btn btn--dark reveal" href="https://chat.whatsapp.com/D8VZ9RCraKYHn0KsHyFJtZ" target="_blank" rel="noopener">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+            Quero entrar no time
+          </a>
         </div>
-
-        <ul class="perks reveal" role="list">
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg>Aviso antecipado das aulas especiais</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg>Novidades e temas do mês em primeira mão</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg>Acesso aos desafios do time</li>
-        </ul>
-
-        <a class="btn btn--dark reveal" href="https://chat.whatsapp.com/D8VZ9RCraKYHn0KsHyFJtZ" target="_blank" rel="noopener">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
-          Quero entrar no time
-        </a>
       </div>
     </section>
 
