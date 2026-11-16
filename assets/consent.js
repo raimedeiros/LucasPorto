@@ -39,7 +39,7 @@
   // Cliques nos links de WhatsApp viram evento "whatsapp_click" (com o plano, quando houver)
   document.addEventListener('click', function (e) {
     if (!gaLoaded) return;
-    var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="chat.whatsapp.com"]');
+    var a = e.target.closest && e.target.closest('a.js-wa, a[href*="wa.me"], a[href*="chat.whatsapp.com"]');
     if (!a) return;
     window.gtag('event', 'whatsapp_click', {
       link_tipo: a.href.indexOf('chat.whatsapp.com') > -1 ? 'grupo' : 'conversa',

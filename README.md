@@ -47,9 +47,9 @@ Todas as páginas carregam `assets/consent.js`, que mostra um aviso discreto de 
 
 ## Onde editar
 
-- **WhatsApp (número e mensagem):** topo do `script.js` (`WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`). Os `href` no HTML são só fallback caso o JS não carregue.
+- **WhatsApp (número e mensagens):** `assets/wa.js`. Para dificultar robôs de spam, o número não aparece no HTML: fica invertido e em pedaços em `PARTS` e o link só é montado no clique. Links de WhatsApp usam a classe `js-wa`; o `href` no HTML aponta para o Instagram como fallback sem JavaScript.
 - **Preços e planos:** direto no `index.html`, nas seções `#consultoria-online` e `#planos-mensais` (acompanhamento mensal).
 - **Cores e fontes:** variáveis no início do `style.css` (`:root`).
 - **Cache:** ao alterar `style.css`, `script.js` ou as imagens em `assets/`, aumente o número em `?v=` nos links do `index.html` (ex.: `style.css?v=3`). Sem isso, navegadores podem continuar usando o arquivo antigo e a página aparece com estilos quebrados.
 - **Logo e fotos:** `assets/logo.svg` (topo e rodapé). Fotos do Lucas: originais em `assets/lucas_personal.JPG` e `assets/lucas_velocity.JPG` (2000×3000); o site usa recortes quadrados de 800px (`lucas_personal_avatar.jpg` no site e na bio, `lucas_velocity_avatar.jpg` na Velocity). Ao trocar uma foto, gere o recorte de novo e aumente o `?v=`.
-- **Mensagem do WhatsApp por plano:** cada botão de plano tem um `data-plan` no `index.html`; o texto base fica em `WHATSAPP_PLAN_MESSAGE` no `script.js`.
+- **Mensagem do WhatsApp por plano:** cada botão de plano tem um `data-plan` no `index.html`; o texto base fica em `PLAN_MESSAGE` no `assets/wa.js`.

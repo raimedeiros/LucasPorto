@@ -1,24 +1,9 @@
 (function () {
   'use strict';
 
-  var WHATSAPP_NUMBER = '5561983435171';
-  var WHATSAPP_MESSAGE = 'Li sobre seu trabalho no instagram e gostaria de mais informações';
-  // Mensagem usada nos botões de cada plano (data-plan no HTML)
-  var WHATSAPP_PLAN_MESSAGE = 'Li sobre seu trabalho no instagram e fiquei interessado no plano {plano}. Gostaria de mais informações';
-
-  function waUrl(message) {
-    return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
-  }
-
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.documentElement.classList.add('js');
-
-  // Botões de WhatsApp: mensagem geral, ou mensagem com o plano quando houver data-plan
-  document.querySelectorAll('.js-wa').forEach(function (a) {
-    var plan = a.dataset.plan;
-    a.href = waUrl(plan ? WHATSAPP_PLAN_MESSAGE.replace('{plano}', plan) : WHATSAPP_MESSAGE);
-  });
 
   // Clicar em qualquer parte do card abre o WhatsApp daquele plano
   document.querySelectorAll('.plan').forEach(function (card) {
