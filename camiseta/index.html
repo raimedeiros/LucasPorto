@@ -43,6 +43,22 @@
     }
     .shirt__title span { color: var(--yellow); }
     .shirt__lead { margin-top: 10px; color: rgba(255, 255, 255, .8); }
+    .shirt__price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .shirt__price strong {
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: 1.8rem;
+      color: var(--yellow);
+    }
+    .shirt__price span {
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .8);
+    }
 
     .shirt__photo {
       margin: 22px auto 0;
@@ -83,6 +99,8 @@
       background: var(--white);
     }
     .field input[type="text"]:focus { outline: none; border-color: var(--gray-dark); }
+    .field input::placeholder { color: #9A9A9A; }
+    .field__hint { margin-top: 6px; font-size: .85rem; color: var(--gray); }
 
     fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 
@@ -138,7 +156,8 @@
     }
     .done h2 { font-size: 1.8rem; }
     .done p { margin-top: 8px; }
-    .done .btn { margin-top: 20px; }
+    .done .done__team { margin-top: 18px; font-size: .95rem; color: var(--gray); }
+    .done .btn { width: 100%; margin-top: 14px; }
 
     .shirt__foot {
       margin-top: 28px;
@@ -156,7 +175,8 @@
     <header class="shirt__head">
       <span class="shirt__kicker">Time do Porto</span>
       <h1 class="shirt__title">Garanta a sua <span>camiseta</span></h1>
-      <p class="shirt__lead">Deixe seu nome e o tamanho. A gente avisa quando a encomenda fechar.</p>
+      <p class="shirt__lead">Deixe seu nome, contato e tamanho. A gente avisa quando a encomenda fechar.</p>
+      <p class="shirt__price"><strong>R$ 69,90</strong><span>Feita por encomenda</span></p>
     </header>
 
     <figure class="shirt__photo">
@@ -168,6 +188,12 @@
         <div class="field">
           <label class="field__label" for="nome">Seu nome</label>
           <input id="nome" name="nome" type="text" autocomplete="name" autocapitalize="words" maxlength="80" required>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="contato">Telefone ou Instagram</label>
+          <input id="contato" name="contato" type="text" autocomplete="tel" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="80" placeholder="(61) 99999-9999 ou @seuinsta" required>
+          <p class="field__hint">Para a gente confirmar o seu pedido.</p>
         </div>
 
         <fieldset class="field">
@@ -191,6 +217,8 @@
         </div>
         <h2>Tá na lista!</h2>
         <p id="done-text"></p>
+        <p class="done__team">Entre no grupo do Time do Porto para saber quando a encomenda fechar.</p>
+        <a class="btn btn--yellow" href="https://chat.whatsapp.com/D8VZ9RCraKYHn0KsHyFJtZ" target="_blank" rel="noopener">Entrar no Time do Porto</a>
         <button class="btn btn--ghost" type="button" id="again">Pedir outra camiseta</button>
       </div>
     </div>
@@ -204,6 +232,7 @@
     var FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScM81-o33qWkbEzTq4U3tXE_txCEuUHGCbXosBrNXEO7cMa0A/formResponse';
     var ENTRY_NOME = 'entry.831528242';
     var ENTRY_TAMANHO = 'entry.338442978';
+    var ENTRY_CONTATO = 'entry.1313129550';
 
     var form = document.getElementById('shirt-form');
     var error = document.getElementById('error');
@@ -221,13 +250,16 @@
       error.hidden = true;
 
       var nome = form.nome.value.trim();
+      var contato = form.contato.value.trim();
       var size = form.querySelector('input[name="tamanho"]:checked');
       if (!nome) return showError('Escreva seu nome.', form.nome);
+      if (!contato) return showError('Informe seu telefone ou Instagram.', form.contato);
       if (!size) return showError('Escolha o tamanho.', form.querySelector('input[name="tamanho"]'));
 
       var data = new URLSearchParams();
       data.append(ENTRY_NOME, nome);
       data.append(ENTRY_TAMANHO, size.value);
+      data.append(ENTRY_CONTATO, contato);
 
       btn.disabled = true;
       btn.textContent = 'Enviando…';
