@@ -180,7 +180,7 @@
     </section>
 
     <!-- ============ TIME DO PORTO ============ -->
-    <section class="section team" id="time" aria-labelledby="t-time">
+    <section class="section team" id="time" data-section="time_do_porto" aria-labelledby="t-time">
       <div class="container team__grid">
         <figure class="team__photo reveal">
           <img src="../assets/velocity_1_web.jpg?v=1" alt="Lucas Porto com a regata amarela da Velocity, sorrindo, mostrando o bíceps e fazendo sinal de paz" width="1600" height="1000" loading="lazy">
@@ -207,7 +207,7 @@
     </section>
 
     <!-- ============ DESAFIOS ============ -->
-    <section class="section dark" id="desafios" aria-labelledby="t-desafios">
+    <section class="section dark" id="desafios" data-section="desafios" aria-labelledby="t-desafios">
       <div class="container challenge">
         <div class="trophy reveal" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></svg>
@@ -270,6 +270,7 @@
       els.forEach(function (el) { obs.observe(el); });
     })();
   </script>
-  <script src="../assets/consent.js?v=2" data-privacy="../privacidade/" defer></script>
+  <script src="../assets/track.js?v=1" defer></script>
+  <script src="../assets/consent.js?v=3" data-privacy="../privacidade/" defer></script>
 </body>
 </html>

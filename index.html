@@ -50,7 +50,7 @@
         </p>
 
         <div class="hero__actions">
-          <a class="btn btn--primary btn--lg js-wa" href="https://instagram.com/oportopersonal" target="_blank" rel="noopener">
+          <a class="btn btn--primary btn--lg js-wa" data-section="hero" href="https://instagram.com/oportopersonal" target="_blank" rel="noopener">
             <svg class="btn__icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
             Chamar no WhatsApp
           </a>
@@ -79,7 +79,7 @@
 
   <main>
     <!-- ============ CONSULTORIA ONLINE (prioridade) ============ -->
-    <section class="section section--main" id="consultoria-online" aria-labelledby="t-online">
+    <section class="section section--main" id="consultoria-online" data-section="consultoria_online" aria-labelledby="t-online">
       <div class="container">
         <div class="section__head reveal">
           <p class="kicker">01 · Prioridade</p>
@@ -141,7 +141,7 @@
     </section>
 
     <!-- ============ ACOMPANHAMENTO MENSAL ============ -->
-    <section class="section" id="planos-mensais" aria-labelledby="t-mensais">
+    <section class="section" id="planos-mensais" data-section="planos_mensais" aria-labelledby="t-mensais">
       <div class="container">
         <div class="section__head reveal">
           <p class="kicker">02</p>
@@ -225,7 +225,7 @@
   </main>
 
   <!-- ============ CTA FINAL / RODAPÉ ============ -->
-  <footer class="final" id="contato">
+  <footer class="final" id="contato" data-section="contato">
     <div class="container final__inner reveal">
       <h2 class="final__title">Bora <span class="accent-alt">começar?</span></h2>
       <p class="final__lead">Me manda uma mensagem e a gente encontra o plano certo para o seu objetivo.</p>
@@ -247,7 +247,7 @@
   </footer>
 
   <!-- Botão flutuante de WhatsApp (aparece após rolar o hero) -->
-  <a class="fab js-wa" href="https://instagram.com/oportopersonal" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <a class="fab js-wa" data-section="botao_flutuante" href="https://instagram.com/oportopersonal" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
   </a>
 
@@ -260,6 +260,7 @@
 
   <script src="script.js?v=4" defer></script>
   <script src="assets/wa.js?v=1" defer></script>
-  <script src="assets/consent.js?v=2" data-privacy="privacidade/" defer></script>
+  <script src="assets/track.js?v=1" defer></script>
+  <script src="assets/consent.js?v=3" data-privacy="privacidade/" defer></script>
 </body>
 </html>

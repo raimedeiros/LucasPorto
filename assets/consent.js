@@ -36,19 +36,6 @@
     document.head.appendChild(s);
   }
 
-  // Cliques nos links de WhatsApp viram evento "whatsapp_click" (com o plano, quando houver)
-  document.addEventListener('click', function (e) {
-    if (!gaLoaded) return;
-    var a = e.target.closest && e.target.closest('a.js-wa, a[href*="wa.me"], a[href*="chat.whatsapp.com"]');
-    if (!a) return;
-    window.gtag('event', 'whatsapp_click', {
-      link_tipo: a.href.indexOf('chat.whatsapp.com') > -1 ? 'grupo' : 'conversa',
-      plano: a.dataset.plan || '',
-      texto: (a.textContent || '').trim().slice(0, 60),
-      pagina: location.pathname
-    });
-  }, true);
-
   // ---------- Aviso ----------
   var css = '' +
     '.lp-consent{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:200;' +

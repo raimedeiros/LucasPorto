@@ -23,7 +23,7 @@
 
     <ul class="links" role="list">
       <li>
-        <a class="link link--velocity" href="../velocity/">
+        <a class="link link--velocity" href="../velocity/" data-link-name="velocity">
           <span class="link__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2"/></svg>
           </span>
@@ -35,7 +35,7 @@
         </a>
       </li>
       <li>
-        <a class="link link--personal" href="../">
+        <a class="link link--personal" href="../" data-link-name="site">
           <span class="link__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg>
           </span>
@@ -47,7 +47,7 @@
         </a>
       </li>
       <li>
-        <a class="link" href="https://chat.whatsapp.com/D8VZ9RCraKYHn0KsHyFJtZ" target="_blank" rel="noopener">
+        <a class="link" data-link-name="time_do_porto" data-section="time_do_porto" href="https://chat.whatsapp.com/D8VZ9RCraKYHn0KsHyFJtZ" target="_blank" rel="noopener">
           <span class="link__icon link__icon--img" aria-hidden="true">
             <img src="../assets/logo_whatsapp_web.png?v=1" alt="" width="48" height="48">
           </span>
@@ -59,7 +59,7 @@
         </a>
       </li>
       <li>
-        <a class="link" href="https://open.spotify.com/playlist/2BdKq4FAtgC0P8CTjF3Lct" target="_blank" rel="noopener">
+        <a class="link" data-link-name="playlist" href="https://open.spotify.com/playlist/2BdKq4FAtgC0P8CTjF3Lct" target="_blank" rel="noopener">
           <span class="link__icon link__icon--img" aria-hidden="true">
             <img src="../assets/logo_spotify.png?v=1" alt="" width="48" height="48">
           </span>
@@ -73,13 +73,14 @@
     </ul>
 
     <nav class="footer__links" aria-label="Mais links">
-      <a href="https://instagram.com/oportopersonal" target="_blank" rel="noopener">@oportopersonal</a>
-      <a class="js-wa" href="https://instagram.com/oportopersonal" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/oportopersonal" target="_blank" rel="noopener" data-link-name="instagram">@oportopersonal</a>
+      <a class="js-wa" data-link-name="whatsapp" data-section="rodape" href="https://instagram.com/oportopersonal" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
 
-    <p class="copy">© 2026 Lucas Porto · <a href="../privacidade/">Privacidade</a></p>
+    <p class="copy">© 2026 Lucas Porto · <a href="../privacidade/" data-link-name="privacidade">Privacidade</a></p>
   </main>
   <script src="../assets/wa.js?v=1" defer></script>
-  <script src="../assets/consent.js?v=2" data-privacy="../privacidade/" defer></script>
+  <script src="../assets/track.js?v=1" defer></script>
+  <script src="../assets/consent.js?v=3" data-privacy="../privacidade/" defer></script>
 </body>
 </html>
