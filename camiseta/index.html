@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camiseta do Time do Porto</title>
+  <meta name="description" content="Garanta a camiseta do Time do Porto: deixe seu nome e tamanho.">
+  <meta name="theme-color" content="#3A3A3A">
+  <!-- Página temporária para a lista de interesse da camiseta -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+  <!-- ?v=: aumente a cada alteração no CSS/imagens para o navegador não usar a versão em cache -->
+  <link rel="stylesheet" href="../assets/velocity.css?v=11">
+  <style>
+    body { background: var(--gray-dark); }
+
+    .shirt {
+      max-width: 520px;
+      margin-inline: auto;
+      padding: 28px 20px 40px;
+      color: var(--white);
+    }
+    .shirt__head { text-align: center; }
+    .shirt__kicker {
+      display: inline-block;
+      padding: .3em .9em;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: var(--gray-dark);
+      font-family: var(--font-head);
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .shirt__title {
+      margin-top: 12px;
+      font-size: clamp(2rem, 9vw, 2.8rem);
+      line-height: 1.05;
+    }
+    .shirt__title span { color: var(--yellow); }
+    .shirt__lead { margin-top: 10px; color: rgba(255, 255, 255, .8); }
+
+    .shirt__photo {
+      margin: 22px auto 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000;
+    }
+    .shirt__photo img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+
+    .card {
+      margin-top: -36px;
+      position: relative;
+      padding: 24px 20px;
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--gray-dark);
+      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .6);
+    }
+
+    .field + .field { margin-top: 20px; }
+    .field__label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+    .field input[type="text"] {
+      width: 100%;
+      min-height: 54px;
+      padding: 0 16px;
+      border: 2px solid #D6D6D6;
+      border-radius: 12px;
+      font: inherit;
+      font-size: 1.05rem; /* >= 16px evita zoom no iPhone */
+      color: var(--gray-dark);
+      background: var(--white);
+    }
+    .field input[type="text"]:focus { outline: none; border-color: var(--gray-dark); }
+
+    fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+
+    .sizes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .size input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .size span {
+      display: grid;
+      place-items: center;
+      min-height: 60px;
+      border: 2px solid #D6D6D6;
+      border-radius: 12px;
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s, border-color .15s, transform .15s var(--ease);
+    }
+    .size span:hover { border-color: var(--gray); }
+    .size input:checked + span {
+      background: var(--yellow);
+      border-color: var(--gray-dark);
+      transform: scale(1.04);
+    }
+    .size input:focus-visible + span { outline: 3px solid var(--gray-dark); outline-offset: 3px; }
+
+    .error {
+      margin-top: 14px;
+      color: #B3261E;
+      font-size: .95rem;
+    }
+
+    .card .btn { width: 100%; margin-top: 24px; }
+    .card .btn[disabled] { opacity: .6; cursor: progress; }
+
+    .done { text-align: center; }
+    .done:focus { outline: none; }
+    .done__icon {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+    .done h2 { font-size: 1.8rem; }
+    .done p { margin-top: 8px; }
+    .done .btn { margin-top: 20px; }
+
+    .shirt__foot {
+      margin-top: 28px;
+      text-align: center;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .7);
+    }
+    .shirt__foot a { color: var(--yellow); }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main class="shirt">
+    <header class="shirt__head">
+      <span class="shirt__kicker">Time do Porto</span>
+      <h1 class="shirt__title">Garanta a sua <span>camiseta</span></h1>
+      <p class="shirt__lead">Deixe seu nome e o tamanho. A gente avisa quando a encomenda fechar.</p>
+    </header>
+
+    <figure class="shirt__photo">
+      <img src="../assets/camiseta_time_do_porto_web.jpg?v=1" alt="Camiseta laranja do Time do Porto com o logo preto no peito" width="1000" height="1000">
+    </figure>
+
+    <div class="card">
+      <form id="shirt-form" novalidate>
+        <div class="field">
+          <label class="field__label" for="nome">Seu nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" autocapitalize="words" maxlength="80" required>
+        </div>
+
+        <fieldset class="field">
+          <legend class="field__label">Tamanho</legend>
+          <div class="sizes">
+            <label class="size"><input type="radio" name="tamanho" value="P" required><span>P</span></label>
+            <label class="size"><input type="radio" name="tamanho" value="M"><span>M</span></label>
+            <label class="size"><input type="radio" name="tamanho" value="G"><span>G</span></label>
+            <label class="size"><input type="radio" name="tamanho" value="GG"><span>GG</span></label>
+          </div>
+        </fieldset>
+
+        <p class="error" id="error" role="alert" hidden></p>
+
+        <button class="btn btn--yellow" type="submit">Quero a minha</button>
+      </form>
+
+      <div class="done" id="done" hidden tabindex="-1">
+        <div class="done__icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3A3A3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </div>
+        <h2>Tá na lista!</h2>
+        <p id="done-text"></p>
+        <button class="btn btn--ghost" type="button" id="again">Pedir outra camiseta</button>
+      </div>
+    </div>
+
+    <p class="shirt__foot">Dúvidas? Fale no <a href="https://chat.whatsapp.com/D8VZ9RCraKYHn0KsHyFJtZ" target="_blank" rel="noopener">grupo do Time do Porto</a>.</p>
+  </main>
+
+  <script>
+    // Envia direto para o Google Form (respostas vão para a planilha ligada a ele).
+    // Se as perguntas do formulário mudarem, os "entry." abaixo precisam ser atualizados.
+    var FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScM81-o33qWkbEzTq4U3tXE_txCEuUHGCbXosBrNXEO7cMa0A/formResponse';
+    var ENTRY_NOME = 'entry.831528242';
+    var ENTRY_TAMANHO = 'entry.338442978';
+
+    var form = document.getElementById('shirt-form');
+    var error = document.getElementById('error');
+    var done = document.getElementById('done');
+    var btn = form.querySelector('button[type="submit"]');
+
+    function showError(msg, field) {
+      error.textContent = msg;
+      error.hidden = false;
+      if (field) field.focus();
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      error.hidden = true;
+
+      var nome = form.nome.value.trim();
+      var size = form.querySelector('input[name="tamanho"]:checked');
+      if (!nome) return showError('Escreva seu nome.', form.nome);
+      if (!size) return showError('Escolha o tamanho.', form.querySelector('input[name="tamanho"]'));
+
+      var data = new URLSearchParams();
+      data.append(ENTRY_NOME, nome);
+      data.append(ENTRY_TAMANHO, size.value);
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+
+      // no-cors: o Google não deixa ler a resposta, então só sabemos se a rede falhou.
+      fetch(FORM_ACTION, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function () {
+          document.getElementById('done-text').textContent = nome + ', tamanho ' + size.value + '.';
+          form.hidden = true;
+          done.hidden = false;
+          done.focus();
+        })
+        .catch(function () {
+          showError('Não foi possível enviar. Verifique a internet e tente de novo.');
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = 'Quero a minha';
+        });
+    });
+
+    document.getElementById('again').addEventListener('click', function () {
+      form.reset();
+      done.hidden = true;
+      form.hidden = false;
+      form.nome.focus();
+    });
+  </script>
+</body>
+</html>
