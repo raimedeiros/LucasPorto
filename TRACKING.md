@@ -57,9 +57,9 @@ Links entre páginas do site **não usam UTM** (UTM em link interno cria uma ses
 
    | Nome da dimensão | Parâmetro do evento |
    |---|---|
-   | Seção | `section` |
-   | Página do clique | `page` |
-   | Link da bio | `link_name` |
+   | Seção | `section` *(criada em 22/11/2026)* |
+   | Página do clique | `page` *(criada em 22/11/2026)* |
+   | Link da bio | `link_name` *(criada em 22/11/2026)* |
    | Plano | `plano` *(já criada em 23/10/2026)* |
 
    As dimensões só mostram dados a partir do dia em que são criadas. O evento pode levar até 24 h para aparecer na lista de parâmetros; se `section` não aparecer no seletor, digite o nome manualmente.
